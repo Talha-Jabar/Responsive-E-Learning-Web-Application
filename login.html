@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+	    background-image: url('bg.jpg');
+      background-size: cover; /* Adjust to your needs */
+      background-position: center; /* Adjust to your needs */
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 300px;
+      width: 100%;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: blue;
+      font-family: 'Pacifico', cursive;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 40%;
+      padding: 10px;
+      background-color: blue;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #ff0055;
+    }
+
+
+    .error {
+      color: red;
+      font-size: 12px;
+      margin-top: -10px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Academic Zone</h1>
+    <form id="login-form" action="">
+      <label for="fname">First Name:</label>
+      <input type="text" id="fname" name="fname" required>
+      <label for="lname">Last Name:</label>
+      <input type="text" id="lname" name="lname" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">LOGIN</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#login-form').submit(function(event) {
+        event.preventDefault();
+        var firstName = $('#fname').val();
+        var lastName = $('#lname').val();
+        var password = $('#password').val();
+
+        if (firstName === '') {
+          $('.error').text('Please enter your first name.');
+        } else if (lastName === '') {
+          $('.error').text('Please enter your last name.');
+        } else if (password === '') {
+          $('.error').text('Please enter your password.');
+        } else {
+          // Login logic here
+          alert('Login successful!');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

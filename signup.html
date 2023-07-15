@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign-Up Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+	    background-image: url('bg.jpg');
+      background-size: cover; /* Adjust to your needs */
+      background-position: center; /* Adjust to your needs */
+      
+    }
+	
+	    /* Apply a slight blur effect */
+    #blur-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(0px); /* Adjust the blur amount */
+      z-index: -1;
+	}
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 92%;
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+
+    .remember-me {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .signup-btn {
+      display: block;
+	  margin: 20px auto;
+      width: 40%;
+      padding: 10px;
+      background-color: blue;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="blur-overlay"></div>
+  <div class="container">
+    <h1 style= color:Blue font-weight:bold font-size:5px>Welcome to Academic Zone</h1>
+    <form id="signup-form">
+      <label for="first-name">First Name:</label>
+      <input type="text" id="first-name" name="first-name" required>
+
+      <label for="last-name">Last Name:</label>
+      <input type="text" id="last-name" name="last-name" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="cnic">CNIC:</label>
+      <input type="text" id="cnic" name="cnic" required>
+
+      <label for="phone-number">Phone Number:</label>
+      <input type="text" id="phone-number" name="phone-number" required>
+
+      <div class="remember-me">
+        <input type="checkbox" id="remember-me" name="remember-me">
+        <label for="remember-me">Remember me</label>
+      </div>
+
+      <button type="submit" class="signup-btn">SIGN UP</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Submit form event handler
+      $('#signup-form').submit(function(event) {
+        event.preventDefault();
+        // Perform form validation and submission logic here
+        // For simplicity, we are not implementing form submission in this example
+        alert('Form submitted successfully!');
+      });
+    });
+  </script>
+</body>
+</html>
